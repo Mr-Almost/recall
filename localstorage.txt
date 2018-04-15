@@ -1,0 +1,69 @@
+width:0px; 
+border-left-color: #e6686a;
+border-top-width: 0px;
+display:block;
+position: absolute;
+top:100%;left:4px;
+
+    <script src="//at.alicdn.com/t/font_586449_0c5wsfzosp833di.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+
+    <a class="swiper-slide" href="//weibo.com/u/2032244331">  <img  src="./keyboard.PNG">  </a>
+              <a class="swiper-slide" href="//weibo.com/u/2032244331">  <img  src="./canvas.jpg">  </a>
+              <a class="swiper-slide" href="//weibo.com/u/2032244331">  <img  src="./apple-style-slide.PNG">  </a>
+
+          <img  class="swiper-slide" src="./keyboard.PNG"> 
+                <img  class="swiper-slide" src="./canvas.jpg">
+                <img  class="swiper-slide" src="./apple-style-slide.PNG">
+
+
+function Human(options){
+
+this.name=options.name
+this.city=options.city
+}
+
+
+
+Human.prototype.species=function(){},
+Human.prototype.walk=function(){},
+Human.prototype.useTools=function(){}
+
+
+
+cookie本质是http协议里的内容（三行）
+session的实质是服务器上的哈希表
+localstorage是浏览器上的哈希表
+
+
+服务器通过给用户一个sessionID
+然后sessionID对应服务器里的一小块内存
+每次用户访问服务器的时候，服务器就通过sessionID读取对应的session，知道用户的隐私信息
+实现无法串改，很安全
+随机数ID不存在服务器数据库，如果不见了就重新登录
+
+我用户这边用随机数不可以随机遇到一个SessionId来暴力解吗...
+session缺点是耗内存
+
+localStorage
+setItem
+getItem
+clear
+
+sessionstorage和session毫无关系！
+
+session也可以通过JSON传sessionID和localstorage（备用）存入浏览器，然后通过查询参数传入服务器
+所以session大部分可以用cookie，也可以用查询参数和localstorage
+
+cache-control一般用max-age，表示保留缓存时间的多久
+ expires 表示几分几秒过期  缺点是本地时间不允许错误
+
+
+md5摘要算法  保证下载的东西没有缺失
+比如linux有400m 下载完之后会有一个MD5xxxx
+当我们下载完linux之后也生成一个md5xxxx，如果两个MD5一样，则表示下载完成
+
+npm全局安装和局部安装的区别  全局：不需要文件名，默认在user/local/bin使  局部安装：前面需要文件名才可以使用
+命令行 -g 是global全局 -d 是destination目的地  -o 是output
+
+babel是用来把文件变成IE能用的东西  一般把lib变成dist

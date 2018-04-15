@@ -1,0 +1,79 @@
+js功能上
+1.导航栏变白，粘住页面 sticky-topbar
+要留意api
+document.querySelector('#topNavBar') 找到div
+window.addEventListener  监听事件
+window.scrollY >0 就变白
+this.view.classList.add('sticky')
+this.view.classList.remove('sticky')
+
+
+
+2.导航到对应模块 ，悬浮哪个标签就有变红；页面滑到哪个模块就有变红  smoothly-navigation
+
+var view=document.querySelector('nav.menu') 找到div
+
+let liTags =this.view.querySelectorAll('nav.menu >ul >li')  找到导航对应的li
+liTags[i].onmouseenter 
+liTags[i].onmouseleave  
+let li=x.currentTarget.classList.add('active')  悬浮哪个标签就有变红
+ aTags[i].onclick=(x)=>{
+x.preventDefault();   先阻止默认，再添加真正的tween.js       preventDefault方法不会阻止该事件的进一步冒泡. event.stopPropagation 方法才有这样的功能.
+let href=a.getAttribute('href')  获取属性
+
+用tween.js的库
+let top=element.offsetTop  对应的位置
+targetTop=top-80   怕被挡住
+
+window.scrollTo(0,coords.taegetTop)  滚到对应的位置
+let currentTop=window.scrollY 
+Math.abs (（targetTop）-scrollY )        到对应位置的距离
+
+
+
+3.页面滑到对应模块自动上滑 auto-slide-up
+let specialTags=document.querySelectorAll('[data-x]')
+
+window.addEventListener('scroll',function(xxxx){
+    findClosetAndremoveOffset();
+}) 
+
+
+for(let i =1;i<specialTags.length; i++){
+    if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+      minIndex = i
+ }对比最短距离的目标与 三个标记了【data-x】模块位置的距离
+
+ specialTags[minIndex].classList.remove('offset')  去除class  用了css
+
+
+    let id=specialTags[minIndex].id
+    let a=document.querySelector('a[href="#'+id+'"]')
+    let li=a.parentNode
+    let brotherAndme=li.parentNode.children  取得兄弟元素
+
+    for(let i=0;i<brotherAndme.length;i++)
+    {
+        brotherAndme[i].classList.remove('highlight')
+    }
+    li.classList.add('highlight')
+}
+页面滑到哪个模块就有变红： 先把全部的标签变无色，再把对应的标签变红
+
+
+
+
+4.作品集的轮播  init-swiper
+5.留言板   message  ajax.
+
+var view=document.querySelector('section.message')
+
+
+
+
+
+
+
+css
+
+1.导航

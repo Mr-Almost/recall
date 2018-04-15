@@ -1,0 +1,14 @@
+let request=new XMLHttpRequest();
+request.open('post','/xxx')
+request.sendr()
+request.onreadystatechange=()=>{
+    if(request.readystate===4){
+        if(request.status>=200 &&request.status<300){'
+           console.log('说明请求成功')
+           let string=request.responseText
+           let object=window.JSON.parse(string)
+        }else if(request.status >= 400){
+            console.log('说明请求失败') 
+        } 
+    }
+}

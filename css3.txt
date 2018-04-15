@@ -1,0 +1,135 @@
+css3
+边框 
+border-radius
+box-shadow
+border-image
+
+背景
+background-size
+background-origin
+
+文本效果
+text-shadow
+word-wrap 单词换行  p.test {text-wrap:none;}  文本换行
+
+字体
+@font-face
+
+
+2D 转换
+translate()
+rotate()
+scale()
+skew()
+matrix()  旋转、缩放、移动以及倾斜元素
+
+transform:
+
+3D 转换
+rotateX()
+rotateY()
+
+过渡
+transition:all 1s;
+
+动画
+animation:myfirst 5s;
+
+
+
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+或者
+@keyframes myfirst
+{
+0%   {background: red;}
+25%  {background: yellow;}
+50%  {background: blue;}
+100% {background: green;}
+}
+
+
+
+多列
+column-count
+column-gap
+column-rule
+
+用户界面
+resize      用户可以自由调整div的大小
+box-sizing
+outline-offset
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html, body {height:100%;}
+        body {padding:0;margin:0;background:#333;position:relative;}
+        .ball {height:500px;width:500px;position:absolute;top:50%;left:50%;margin:-250px 0 0 -250px;transition:all .6s;}
+        .ball:hover {transform:scale(1.2);}
+
+        .ball_box {width:100%;height:100%;animation:rotate3d 20s infinite linear;}
+        .ball div {width:100%;height:100%;border-radius:100%;border:solid 1px #fff;position:absolute;top:50%;left:50%;margin:-50% 0 0 -50%;transform-style:preserve-3d;}
+        .ball .x1 {transform:rotateY(0deg)}
+        .ball .x2 {transform:rotateY(20deg)}
+        .ball .x3 {transform:rotateY(40deg)}
+        .ball .x4 {transform:rotateY(60deg)}
+        .ball .x5 {transform:rotateY(80deg)}
+        .ball .x6 {transform:rotateY(100deg)}
+        .ball .x7 {transform:rotateY(120deg)}
+        .ball .x8 {transform:rotateY(140deg)}
+        .ball .x9 {transform:rotateY(160deg)}
+
+        .ball .y1 {transform:rotateX(90deg) translateZ(200px) scale(0.60);}
+        .ball .y2 {transform:rotateX(90deg) translateZ(150px) scale(0.80);}
+        .ball .y3 {transform:rotateX(90deg) translateZ(100px) scale(0.92);}
+        .ball .y4 {transform:rotateX(90deg) translateZ(50px) scale(0.98);}
+        .ball .y5 {transform:rotateX(90deg) translateZ(0);}
+        .ball .y6 {transform:rotateX(90deg) translateZ(-50px) scale(0.98);}
+        .ball .y7 {transform:rotateX(90deg) translateZ(-100px) scale(0.92);}
+        .ball .y8 {transform:rotateX(90deg) translateZ(-150px) scale(0.80);}
+        .ball .y9 {transform:rotateX(90deg) translateZ(-200px) scale(0.60);}
+
+        @keyframes rotate3d {
+            0% {transform:rotate(20deg) rotateX(0deg) rotateY(120deg)}
+            100% {transform:rotate(-20deg) rotateX(-20deg) rotateY(360deg)}
+        }
+    </style>
+</head>
+
+<body>
+<div class="ball">
+    <div class="ball_box">
+        <div class="x1"></div>
+        <div class="x2"></div>
+        <div class="x3"></div>
+        <div class="x4"></div>
+        <div class="x5"></div>
+        <div class="x6"></div>
+        <div class="x7"></div>
+        <div class="x8"></div>
+        <div class="x9"></div>
+        <div class="y1"></div>
+        <div class="y2"></div>
+        <div class="y3"></div>
+        <div class="y4"></div>
+        <div class="y5"></div>
+        <div class="y6"></div>
+        <div class="y7"></div>
+        <div class="y8"></div>
+        <div class="y9"></div>
+
+    </div>
+</div>
+</body>
+</html>
+
+球

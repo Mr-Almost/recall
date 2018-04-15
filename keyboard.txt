@@ -1,0 +1,25 @@
+js
+功能：
+1.按键盘中的一个键会导航
+localStorage.setItem('zzz', JSON.stringify(hash))
+
+function getFromLocalStorage(name){
+  return JSON.parse(localStorage.getItem(name) || 'null')
+}
+
+window.open('http://'+website, '_blank')
+
+2.可以把键盘里面的值改成你想要的网址
+button.onclick = function(xzkjcnxlkcjlk){
+				// xzkjcnxlkcjlk['target'] 就是用户点击的元素
+				var button2 = xzkjcnxlkcjlk['target']
+				var img2 = button2.previousSibling
+				var key = button2['id'] // q w e r t
+				var x = prompt('给我一个网址') // qq.com
+				hash[key] = x  // hash 变更
+				img2.src = 'http://'+x + '/favicon.ico'
+				img2.onerror = function(xxx){
+					xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+				}
+				localStorage.setItem('zzz', JSON.stringify(hash))
+}
